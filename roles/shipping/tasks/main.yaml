@@ -2,10 +2,6 @@
   import_role:
     name: common
     tasks_from: app-setup
-- name: move shipping jar
-  command: mv target/shipping-1.0.jar shipping.jar 
-  args:
-    chdir: /app
 - name: systemd setup
   import_role:
     name: common
@@ -14,6 +10,10 @@
   import_role:
     name: common
     tasks_from: python
+- name: move shipping jar
+  command: mv target/shipping-1.0.jar shipping.jar 
+  args:
+    chdir: /app
 - name: load mysql data
   community.mysql.mysql_db:
     state: import
