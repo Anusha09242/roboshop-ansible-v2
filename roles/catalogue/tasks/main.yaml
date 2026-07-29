@@ -34,8 +34,7 @@
   tags:
   - mongodb
 
-- name: enable and restart catalogue
-  service:
-    name: catalogue
-    state: restarted
-    enabled: yes
+- name: restart
+  import_role:
+    name: common
+    tasks_from: restart

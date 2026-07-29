@@ -10,8 +10,7 @@
   import_role:
     name: common
     tasks_from: systemd-setup
-- name: restart and enable cart
-  service:
-    name: cart
-    state: restarted
-    enabled: yes
+- name: restart
+  import_role:
+    name: common
+    tasks_from: restart
