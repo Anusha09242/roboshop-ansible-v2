@@ -1,0 +1,17 @@
+- name: install maven
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - maven
+  - mysql
+
+- name: download dependencies
+  command: mvn clean package 
+  args:
+    chdir: /app
+
+- name: download dependencies
+  command: mvn clean package 
+  args:
+    chdir: /app
